@@ -25,7 +25,7 @@ __renderjsModules["9ab38898"] = (() => {
     default: () => stdin_default
   });
 
-  // ../../../../../Desktop/sju-shop_1.0.3/components/uni-swipe-action-item/render.js
+  // C:/Users/18037/Desktop/oooo/-/components/uni-swipe-action-item/render.js
   var MIN_DISTANCE = 10;
   var render_default = {
     showWatch(newVal, oldVal, ownerInstance, instance, self) {
@@ -43,11 +43,6 @@ __renderjsModules["9ab38898"] = (() => {
       }
       this.resetTouchStatus(instance, self);
     },
-    /**
-     * 开始触摸操作
-     * @param {Object} e
-     * @param {Object} ins
-     */
     touchstart(e, ownerInstance, self) {
       let instance = e.instance;
       let disabled = instance.getDataset().disabled;
@@ -63,11 +58,6 @@ __renderjsModules["9ab38898"] = (() => {
       state.x = state.left || 0;
       this.stopTouchStart(e, ownerInstance, self);
     },
-    /**
-     * 开始滑动操作
-     * @param {Object} e
-     * @param {Object} ownerInstance
-     */
     touchmove(e, ownerInstance, self) {
       let instance = e.instance;
       if (!instance)
@@ -87,11 +77,6 @@ __renderjsModules["9ab38898"] = (() => {
       let x = state.x + state.deltaX;
       this.move(x, instance, ownerInstance, self);
     },
-    /**
-     * 结束触摸操作
-     * @param {Object} e
-     * @param {Object} ownerInstance
-     */
     touchend(e, ownerInstance, self) {
       let instance = e.instance;
       let disabled = instance.getDataset().disabled;
@@ -101,12 +86,6 @@ __renderjsModules["9ab38898"] = (() => {
         return;
       this.moveDirection(state.left, instance, ownerInstance, self);
     },
-    /**
-     * 设置移动距离
-     * @param {Object} value
-     * @param {Object} instance
-     * @param {Object} ownerInstance
-     */
     move(value, instance, ownerInstance, self) {
       value = value || 0;
       let state = self.state;
@@ -120,11 +99,6 @@ __renderjsModules["9ab38898"] = (() => {
         });
       });
     },
-    /**
-     * 获取元素信息
-     * @param {Object} instance
-     * @param {Object} ownerInstance
-     */
     getDom(instance, ownerInstance, self) {
       var state = self.state;
       var $el = ownerInstance.$el || ownerInstance.$vm && ownerInstance.$vm.$el;
@@ -137,22 +111,9 @@ __renderjsModules["9ab38898"] = (() => {
     getDisabledType(value) {
       return (typeof value === "string" ? JSON.parse(value) : value) || false;
     },
-    /**
-     * 获取范围
-     * @param {Object} num
-     * @param {Object} min
-     * @param {Object} max
-     */
     range(num, min, max) {
       return Math.min(Math.max(num, min), max);
     },
-    /**
-     * 移动方向判断
-     * @param {Object} left
-     * @param {Object} value
-     * @param {Object} ownerInstance
-     * @param {Object} ins
-     */
     moveDirection(left, ins, ownerInstance, self) {
       var state = self.state;
       var threshold = state.threshold;
@@ -172,12 +133,6 @@ __renderjsModules["9ab38898"] = (() => {
         this.openState("none", ins, ownerInstance, self);
       }
     },
-    /**
-     * 开启状态
-     * @param {Boolean} type
-     * @param {Object} ins
-     * @param {Object} ownerInstance
-     */
     openState(type, ins, ownerInstance, self) {
       let state = self.state;
       let leftWidth = state.leftWidth;
@@ -215,10 +170,6 @@ __renderjsModules["9ab38898"] = (() => {
       }
       return "";
     },
-    /**
-     * 重置滑动状态
-     * @param {Object} event
-     */
     resetTouchStatus(instance, self) {
       let state = self.state;
       state.direction = "";
@@ -227,10 +178,6 @@ __renderjsModules["9ab38898"] = (() => {
       state.offsetX = 0;
       state.offsetY = 0;
     },
-    /**
-     * 设置滑动开始位置
-     * @param {Object} event
-     */
     stopTouchStart(event, ownerInstance, self) {
       let instance = event.instance;
       let state = self.state;
@@ -239,10 +186,6 @@ __renderjsModules["9ab38898"] = (() => {
       state.startX = touch.clientX;
       state.startY = touch.clientY;
     },
-    /**
-     * 滑动中，是否禁止打开
-     * @param {Object} event
-     */
     stopTouchMove(event, self) {
       let instance = event.instance;
       let state = self.state;
